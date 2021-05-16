@@ -22,5 +22,8 @@ function handleSaveButton(event) {
   newObject.EntryId = data.nextEntryId;
   data.entries.unshift(newObject);
   data.nextEntryId++;
-
+  entryFormTitle.value = '';
+  entryFormPhotoUrl.value = '';
+  entryFormNotes.value = '';
+  entryFormImg.src = 'images/placeholder-image-square.jpg';
 }
