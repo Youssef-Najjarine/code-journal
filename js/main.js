@@ -19,5 +19,7 @@ function handleSaveButton(event) {
   newObject.title = entryFormTitle.value;
   newObject.photoUrl = entryFormPhotoUrl.value;
   newObject.notes = entryFormNotes.value;
+  newObject.EntryId = data.nextEntryId;
+  data.nextEntryId++;
 
 }
