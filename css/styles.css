@@ -22,7 +22,6 @@ h1 {
 .nav {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .nav a {
@@ -49,16 +48,14 @@ label {
 }
 
 #notes {
+  font-size: 30px;
   border-radius: 5px;
   border-color: rebeccapurple;
   width: 830px;
-  height: 150px;
-  position: relative;
+  padding-bottom: 150px;
 }
 
 .save {
-  position: absolute;
-  left: 1290px;
   border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
