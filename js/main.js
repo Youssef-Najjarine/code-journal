@@ -25,5 +25,10 @@ function handleSaveButton(event) {
   entryFormTitle.value = '';
   entryFormPhotoUrl.value = '';
   entryFormNotes.value = '';
+  saveData();
   entryFormImg.src = 'images/placeholder-image-square.jpg';
+}
+
+function saveData() {
+  localStorage.setItem('data', JSON.stringify(data));
 }
