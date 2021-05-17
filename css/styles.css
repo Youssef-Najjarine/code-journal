@@ -55,7 +55,8 @@ label {
   padding-bottom: 150px;
 }
 
-.save {
+.save,
+.new {
   border-radius: 5px;
   font-size: 16px;
   text-decoration: none;
@@ -63,4 +64,26 @@ label {
   background-color: rebeccapurple;
   color: white;
   text-transform: uppercase;
+}
+
+.entriesDiv {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  margin: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 0 0 40px 0;
+  display: flex;
+}
+
+li img {
+  margin-right: 50px;
 }
