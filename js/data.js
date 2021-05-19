@@ -6,3 +6,9 @@ var data = {
   editing: null,
   nextEntryId: 1
 };
+
+const localData = localStorage.getItem('data');
+if (localData !== null) {
+
+  data = JSON.parse(localData);
+}

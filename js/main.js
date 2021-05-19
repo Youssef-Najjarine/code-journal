@@ -1,10 +1,12 @@
 /* global data */
 /* exported data */
+
 const entryFormImg = document.querySelector('[data-view="entry-form"] img');
 const entryFormForm1 = document.querySelector('.form1');
 const entryFormTitle = document.querySelector('#title');
 const entryFormPhotoUrl = document.querySelector('#photoUrl');
 const entryFormNotes = document.querySelector('#notes');
+const ul = document.querySelector('ul');
 
 entryFormPhotoUrl.addEventListener('input', handleUrl);
 entryFormForm1.addEventListener('submit', handleSaveButton);
@@ -15,6 +17,7 @@ function handleUrl() {
 
 function handleSaveButton(event) {
   event.preventDefault();
+
   const newObject = {};
   newObject.title = entryFormTitle.value;
   newObject.photoUrl = entryFormPhotoUrl.value;
@@ -22,13 +25,38 @@ function handleSaveButton(event) {
   newObject.EntryId = data.nextEntryId;
   data.entries.unshift(newObject);
   data.nextEntryId++;
-  entryFormTitle.value = '';
-  entryFormPhotoUrl.value = '';
-  entryFormNotes.value = '';
+  entryFormForm1.reset();
   saveData();
   entryFormImg.src = 'images/placeholder-image-square.jpg';
 }
 
 function saveData() {
   localStorage.setItem('data', JSON.stringify(data));
+}
+
+window.addEventListener('DOMContentLoaded', populateEntries);
+
+function createEntries(entry) {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
+  const div = document.createElement('div');
+  const h3 = document.createElement('h3');
+  const p = document.createElement('p');
+  li.appendChild(img);
+  img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  li.appendChild(div);
+  div.setAttribute('class', 'textContent');
+  div.appendChild(h3);
+  div.appendChild(p);
+  img.src = entry.photoUrl;
+  h3.textContent = entry.title;
+  p.textContent = entry.notes;
+  return li;
+}
+
+function populateEntries() {
+
+  for (let i = 0; i < data.entries.length; i++) {
+    ul.appendChild(createEntries(data.entries[i]));
+  }
 }
