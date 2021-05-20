@@ -46,19 +46,21 @@ function saveData() {
 
 function createEntries(entry) {
   const li = document.createElement('li');
-  const img = document.createElement('img');
-  const div = document.createElement('div');
-  const h3 = document.createElement('h3');
-  const p = document.createElement('p');
-  li.appendChild(img);
-  img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  li.appendChild(div);
-  div.setAttribute('class', 'textContent');
-  div.appendChild(h3);
-  div.appendChild(p);
-  img.src = entry.photoUrl;
-  h3.textContent = entry.title;
-  p.textContent = entry.notes;
+  li.setAttribute('data-entry-id', entry.EntryId);
+
+  li.innerHTML = `<div class="imgTextContent">
+        <img src="${entry.photoUrl}">
+
+
+        <div class="textContent">
+          <h3>${entry.title}</h3>
+          <p>I ${entry.notes}</p>
+          </div>
+
+        </div>
+        <div class="pencilDiv">
+          <a href="#" class="pencil"></a>
+        </div>`;
   return li;
 }
 
