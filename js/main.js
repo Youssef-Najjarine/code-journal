@@ -11,12 +11,14 @@ const entryFormNotes = document.querySelector('#notes');
 const ul = document.querySelector('ul');
 const navBarEntries = document.querySelector('.navBarEntries');
 const h1 = document.querySelector('.entriesH1');
+const newEntry = document.querySelector('.new');
 
 window.addEventListener('DOMContentLoaded', populateEntries);
 entryFormPhotoUrl.addEventListener('input', handleUrl);
 entryFormForm1.addEventListener('submit', handleSaveButton);
 navBarEntries.addEventListener('click', handleNavBarEntries);
 h1.addEventListener('click', handleH1);
+newEntry.addEventListener('click', handleNewEntry);
 
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
@@ -36,7 +38,6 @@ function handleSaveButton(event) {
   entryFormImg.src = 'images/placeholder-image-square.jpg';
   dataViewEntries.classList.remove('hidden');
   entryForm.classList.add('hidden');
-
 }
 
 function saveData() {
@@ -72,6 +73,11 @@ function handleNavBarEntries() {
   entryForm.classList.add('hidden');
 }
 function handleH1() {
+  dataViewEntries.classList.add('hidden');
+  entryForm.classList.remove('hidden');
+}
+
+function handleNewEntry() {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
 }
