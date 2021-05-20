@@ -62,6 +62,7 @@ function createEntries(entry) {
           <a href="#" class="pencil"></a>
         </div>`;
   return li;
+
 }
 
 function populateEntries() {
