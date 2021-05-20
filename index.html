@@ -17,14 +17,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="purpleBar">
-    <div class="nav">
-      <h1>Blog Journal</h1>
 
-      <a href="#">Entries</a>
-    </div>
-  </div>
   <div data-view="entry-form">
+    <div class="purpleBar">
+      <div class="nav">
+        <h1>Blog Journal</h1>
+
+        <a href="#" class="navBarEntries">Entries</a>
+      </div>
+    </div>
   <form class="form1">
     <div class="container">
       <div class="row">
@@ -47,13 +48,35 @@
         <label for="notes">Notes</label><br>
         <input type="text" name="notes" id="notes" required/>
     </div>
-
-    </div>
     <button class="save">Save</button>
+    </div>
   </form>
   </div>
-  <script src="js/main.js"></script>
+
+
+  <div data-view="entries"  class="hidden">
+    <div class="purpleBar">
+    <div class="nav">
+      <a href="#" class="entriesH1"><h1>Blog Journal</h1></a>
+
+      <a href="#" class="navBarEntries">Entries</a>
+    </div>
+  </div>
+    <div class="container">
+      <div class="entriesDiv">
+
+        <h2>Entries</h2>
+
+        <a href="#" class="new">new</a>
+
+      </div>
+    <ul>
+
+    </ul>
+    </div>
+  </div>
   <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
