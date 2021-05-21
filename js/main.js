@@ -20,6 +20,7 @@ navBarEntries.addEventListener('click', handleNavBarEntries);
 h1.addEventListener('click', handleH1);
 newEntry.addEventListener('click', handleNewEntry);
 ul.addEventListener('click', handleEditIcon);
+
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
 }
@@ -53,7 +54,7 @@ function createEntries(entry) {
 
         <div class="textContent">
           <h3>${entry.title}</h3>
-          <p>I ${entry.notes}</p>
+          <p>${entry.notes}</p>
           </div>
 
         </div>
@@ -88,4 +89,9 @@ function handleEditIcon(event) {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
   data.editing = event.target.closest('li');
+  const dataEntryId = event.target.getAttribute('data-entry-id');
+  entryFormTitle.value = data.entries[data.entries.length - dataEntryId].title;
+  entryFormPhotoUrl.value = data.entries[data.entries.length - dataEntryId].photoUrl;
+  entryFormNotes.value = data.entries[data.entries.length - dataEntryId].notes;
+  entryFormImg.src = entryFormPhotoUrl.value;
 }
