@@ -93,4 +93,5 @@ function handleEditIcon(event) {
   entryFormPhotoUrl.value = data.entries[data.entries.length - dataEntryId].photoUrl;
   entryFormNotes.value = data.entries[data.entries.length - dataEntryId].notes;
   entryFormImg.src = entryFormPhotoUrl.value;
+
 }
