@@ -84,7 +84,8 @@ function handleNewEntry() {
   entryForm.classList.remove('hidden');
 }
 
-function handleEditIcon() {
+function handleEditIcon(event) {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
+  data.editing = event.target.closest('li');
 }
