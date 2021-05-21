@@ -85,5 +85,6 @@ function handleNewEntry() {
 }
 
 function handleEditIcon() {
-
+  dataViewEntries.classList.add('hidden');
+  entryForm.classList.remove('hidden');
 }
