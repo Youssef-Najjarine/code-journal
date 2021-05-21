@@ -1,6 +1,5 @@
 /* global data */
 /* exported data */
-
 const entryFormImg = document.querySelector('[data-view="entry-form"] img');
 const dataViewEntries = document.querySelector('[data-view="entries"]');
 const entryForm = document.querySelector('[data-view="entry-form"]');
