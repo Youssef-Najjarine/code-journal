@@ -19,7 +19,7 @@ entryFormForm1.addEventListener('submit', handleSaveButton);
 navBarEntries.addEventListener('click', handleNavBarEntries);
 h1.addEventListener('click', handleH1);
 newEntry.addEventListener('click', handleNewEntry);
-
+ul.addEventListener('click', handleEditIcon);
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
 }
@@ -46,7 +46,6 @@ function saveData() {
 
 function createEntries(entry) {
   const li = document.createElement('li');
-  li.setAttribute('data-entry-id', entry.EntryId);
 
   li.innerHTML = `<div class="imgTextContent">
         <img src="${entry.photoUrl}">
@@ -59,7 +58,7 @@ function createEntries(entry) {
 
         </div>
         <div class="pencilDiv">
-          <a href="#" class="pencil"></a>
+          <a href="#" class="pencil" data-entry-id = "${entry.EntryId}"></a>
         </div>`;
   return li;
 
@@ -83,4 +82,8 @@ function handleH1() {
 function handleNewEntry() {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
+}
+
+function handleEditIcon() {
+
 }
