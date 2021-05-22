@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Code Journal</title>
   <link rel="icon" href="images/favicon.ico">
-  <link
-    rel="stylesheet"
-    crossorigin="anonymous"
+  <link rel="stylesheet" crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
   <link rel="stylesheet" href="css/reset.css">
@@ -16,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div data-view="entry-form">
@@ -26,42 +26,48 @@
         <a href="#" class="navBarEntries">Entries</a>
       </div>
     </div>
-  <form class="form1">
-    <div class="container">
-      <div class="row">
-        <div class="column-half">
-          <h2>New Entry</h2>
-          <img src="images/placeholder-image-square.jpg"/>
+    <form class="form1">
+      <div class="container">
+        <div class="row">
+          <div class="column-half">
+            <h2>New Entry</h2>
+            <img src="images/placeholder-image-square.jpg" />
+          </div>
+          <div class="column-half">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" id="title" required /><br>
+
+            <label for="photoUrl">Photo URL</label><br>
+            <input type="text" name="photoUrl" id="photoUrl" required /><br>
+
+
+          </div>
+
+
         </div>
-        <div class="column-half">
-          <label for="title">Title</label><br>
-          <input type="text" name="title" id="title" required/><br>
-
-          <label for="photoUrl">Photo URL</label><br>
-          <input type="text" name="photoUrl" id="photoUrl" required/><br>
-
-
+        <div class="column-full">
+          <label for="notes">Notes</label><br>
+          <input type="text" name="notes" id="notes" required />
         </div>
-
+        <div class="deleteSaveDiv">
+          <a href="#" class="deleteEntry">Delete Entry</a>
+        <button class="save">Save</button>
+        </div>
       </div>
-      <div class="column-full">
-        <label for="notes">Notes</label><br>
-        <input type="text" name="notes" id="notes" required/>
-    </div>
-    <button class="save">Save</button>
-    </div>
-  </form>
+    </form>
   </div>
 
 
-  <div data-view="entries"  class="hidden">
+  <div data-view="entries" class="hidden">
     <div class="purpleBar">
-    <div class="nav">
-      <a href="#" class="entriesH1"><h1>Blog Journal</h1></a>
+      <div class="nav">
+        <a href="#" class="entriesH1">
+          <h1>Blog Journal</h1>
+        </a>
 
-      <a href="#" class="navBarEntries">Entries</a>
+        <a href="#" class="navBarEntries">Entries</a>
+      </div>
     </div>
-  </div>
     <div class="container">
       <div class="entriesDiv">
 
@@ -70,9 +76,10 @@
         <a href="#" class="new">new</a>
 
       </div>
-    <ul>
+      <ul>
 
-    </ul>
+      </ul>
+
     </div>
   </div>
   <script src="js/data.js"></script>

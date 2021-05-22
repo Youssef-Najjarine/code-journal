@@ -1,6 +1,5 @@
 /* global data */
 /* exported data */
-
 const entryFormImg = document.querySelector('[data-view="entry-form"] img');
 const dataViewEntries = document.querySelector('[data-view="entries"]');
 const entryForm = document.querySelector('[data-view="entry-form"]');
@@ -12,6 +11,7 @@ const ul = document.querySelector('ul');
 const navBarEntries = document.querySelector('.navBarEntries');
 const h1 = document.querySelector('.entriesH1');
 const newEntry = document.querySelector('.new');
+const deleteEntry = document.querySelector('.deleteEntry');
 
 window.addEventListener('DOMContentLoaded', populateEntries);
 entryFormPhotoUrl.addEventListener('input', handleUrl);
@@ -20,6 +20,7 @@ navBarEntries.addEventListener('click', handleNavBarEntries);
 h1.addEventListener('click', handleH1);
 newEntry.addEventListener('click', handleNewEntry);
 ul.addEventListener('click', handleEditIcon);
+deleteEntry.addEventListener('click', handleDeleteEntry);
 
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
@@ -39,6 +40,7 @@ function handleSaveButton(event) {
   entryFormImg.src = 'images/placeholder-image-square.jpg';
   dataViewEntries.classList.remove('hidden');
   entryForm.classList.add('hidden');
+  deleteEntry.classList.remove('hidden');
 }
 
 function saveData() {
@@ -54,7 +56,7 @@ function createEntries(entry) {
 
         <div class="textContent">
           <h3>${entry.title}</h3>
-          <p>I ${entry.notes}</p>
+          <p>${entry.notes}</p>
           </div>
 
         </div>
@@ -74,20 +76,33 @@ function populateEntries() {
 function handleNavBarEntries() {
   dataViewEntries.classList.remove('hidden');
   entryForm.classList.add('hidden');
+  deleteEntry.classList.add('hidden');
 }
+
 function handleH1() {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
+  deleteEntry.classList.add('hidden');
 }
 
 function handleNewEntry() {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
+  deleteEntry.classList.add('hidden');
 }
 
 function handleEditIcon(event) {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
   data.editing = event.target.closest('li');
+  const dataEntryId = event.target.getAttribute('data-entry-id');
+  entryFormTitle.value = data.entries[data.entries.length - dataEntryId].title;
+  entryFormPhotoUrl.value = data.entries[data.entries.length - dataEntryId].photoUrl;
+  entryFormNotes.value = data.entries[data.entries.length - dataEntryId].notes;
+  entryFormImg.src = entryFormPhotoUrl.value;
+  deleteEntry.classList.remove('hidden');
+}
+
+function handleDeleteEntry() {
 
 }
