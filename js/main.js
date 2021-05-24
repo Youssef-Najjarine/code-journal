@@ -112,4 +112,5 @@ function handleDeleteEntry() {
 
 function handCancel() {
   blackBox.classList.add('hidden');
+
 }
