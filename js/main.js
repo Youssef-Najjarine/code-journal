@@ -12,6 +12,8 @@ const navBarEntries = document.querySelector('.navBarEntries');
 const h1 = document.querySelector('.entriesH1');
 const newEntry = document.querySelector('.new');
 const deleteEntry = document.querySelector('.deleteEntry');
+const blackBox = document.querySelector('.blackBox');
+const cancel = document.querySelector('.cancel');
 
 window.addEventListener('DOMContentLoaded', populateEntries);
 entryFormPhotoUrl.addEventListener('input', handleUrl);
@@ -21,6 +23,7 @@ h1.addEventListener('click', handleH1);
 newEntry.addEventListener('click', handleNewEntry);
 ul.addEventListener('click', handleEditIcon);
 deleteEntry.addEventListener('click', handleDeleteEntry);
+cancel.addEventListener('click', handCancel);
 
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
@@ -104,5 +107,9 @@ function handleEditIcon(event) {
 }
 
 function handleDeleteEntry() {
+  blackBox.classList.remove('hidden');
+}
 
+function handCancel() {
+  blackBox.classList.add('hidden');
 }

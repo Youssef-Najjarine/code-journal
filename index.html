@@ -36,7 +36,6 @@
           <div class="column-half">
             <label for="title">Title</label><br>
             <input type="text" name="title" id="title" required /><br>
-
             <label for="photoUrl">Photo URL</label><br>
             <input type="text" name="photoUrl" id="photoUrl" required /><br>
 
@@ -50,10 +49,18 @@
           <input type="text" name="notes" id="notes" required />
         </div>
         <div class="deleteSaveDiv">
-          <a href="#" class="deleteEntry">Delete Entry</a>
+          <a href="#" class="deleteEntry hidden">Delete Entry</a>
         <button class="save">Save</button>
         </div>
       </div>
+        <div class="blackBox hidden">
+          <div class="whiteBox">
+            <h2 class="handleEntryDeleteQuestion">Are you sure you want to delete this entry?</h2>
+              <a class="cancel">cancel</a>
+              <a class="confirm">confirm</a>
+
+          </div>
+        </div>
     </form>
   </div>
 

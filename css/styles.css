@@ -153,3 +153,47 @@ li img {
   bottom: -4px;
   transform: rotate(45deg);
 }
+
+.blackBox {
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.whiteBox {
+  font-size: 15px;
+  background-color: white;
+  padding: 30px 30px 30px 30px;
+  border-radius: 5px;
+}
+
+.handleEntryDeleteQuestion {
+  margin: 10px 0 50px 0;
+}
+
+.confirm {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  background-color: red;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.cancel {
+  margin-right: 280px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+  background-color: gray;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
