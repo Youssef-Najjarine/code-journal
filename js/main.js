@@ -1,5 +1,6 @@
 /* global data */
 /* exported data */
+// localStorage.clear();
 const entryFormImg = document.querySelector('[data-view="entry-form"] img');
 const dataViewEntries = document.querySelector('[data-view="entries"]');
 const entryForm = document.querySelector('[data-view="entry-form"]');
@@ -88,6 +89,8 @@ function handleH1() {
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
   deleteEntry.classList.add('hidden');
+  entryFormForm1.reset();
+  entryFormImg.src = 'images/placeholder-image-square.jpg';
 }
 
 function handleNewEntry() {
@@ -97,6 +100,7 @@ function handleNewEntry() {
 }
 
 function handleEditIcon(event) {
+  entryFormForm1.reset();
   dataViewEntries.classList.add('hidden');
   entryForm.classList.remove('hidden');
   data.editing = event.target.closest('li');
@@ -119,11 +123,13 @@ function handleCancel() {
 }
 
 function handleConfirm(event) {
-
   const dataEntryId = event.target.getAttribute('data-entry-id');
   data.entries.splice(data.entries.length - dataEntryId, 1);
   ul.innerHTML = '';
   populateEntries();
   dataViewEntries.classList.remove('hidden');
   entryForm.classList.add('hidden');
+  blackBox.classList.add('hidden');
+  entryFormForm1.reset();
+  entryFormImg.src = 'images/placeholder-image-square.jpg';
 }
