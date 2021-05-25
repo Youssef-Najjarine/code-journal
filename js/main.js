@@ -14,6 +14,7 @@ const newEntry = document.querySelector('.new');
 const deleteEntry = document.querySelector('.deleteEntry');
 const blackBox = document.querySelector('.blackBox');
 const cancel = document.querySelector('.cancel');
+const confirm = document.querySelector('.confirm');
 
 window.addEventListener('DOMContentLoaded', populateEntries);
 entryFormPhotoUrl.addEventListener('input', handleUrl);
@@ -23,7 +24,8 @@ h1.addEventListener('click', handleH1);
 newEntry.addEventListener('click', handleNewEntry);
 ul.addEventListener('click', handleEditIcon);
 deleteEntry.addEventListener('click', handleDeleteEntry);
-cancel.addEventListener('click', handCancel);
+cancel.addEventListener('click', handleCancel);
+confirm.addEventListener('click', handleConfirm);
 
 function handleUrl() {
   entryFormImg.src = entryFormPhotoUrl.value;
@@ -104,13 +106,24 @@ function handleEditIcon(event) {
   entryFormNotes.value = data.entries[data.entries.length - dataEntryId].notes;
   entryFormImg.src = entryFormPhotoUrl.value;
   deleteEntry.classList.remove('hidden');
+  confirm.setAttribute('data-entry-id', dataEntryId);
 }
 
 function handleDeleteEntry() {
   blackBox.classList.remove('hidden');
+
 }
 
-function handCancel() {
+function handleCancel() {
   blackBox.classList.add('hidden');
+}
 
+function handleConfirm(event) {
+
+  const dataEntryId = event.target.getAttribute('data-entry-id');
+  data.entries.splice(data.entries.length - dataEntryId, 1);
+  ul.innerHTML = '';
+  populateEntries();
+  dataViewEntries.classList.remove('hidden');
+  entryForm.classList.add('hidden');
 }
