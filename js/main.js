@@ -1,6 +1,5 @@
 /* global data */
 /* exported data */
-
 const entryFormImg = document.querySelector('[data-view="entry-form"] img');
 const dataViewEntries = document.querySelector('[data-view="entries"]');
 const entryForm = document.querySelector('[data-view="entry-form"]');
@@ -54,7 +53,6 @@ function createEntries(entry) {
 
         <div class="textContent">
           <h3>${entry.title}</h3>
-          <p>I ${entry.notes}</p>
           </div>
 
         </div>

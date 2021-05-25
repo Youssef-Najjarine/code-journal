@@ -92,8 +92,49 @@ ul {
 li {
   margin: 0 0 40px 0;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 li img {
   margin-right: 50px;
+}
+
+.imgTextContent {
+  display: flex;
+}
+
+.pencilDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pencil {
+  width: 10px;
+  height: 30px;
+  background: rebeccapurple;
+  position: relative;
+  transform: rotate(30deg);
+}
+
+.pencil::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rebeccapurple;
+  top: -13px;
+}
+
+.pencil::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rebeccapurple;
+  left: 1px;
+  bottom: -4px;
+  transform: rotate(45deg);
 }
