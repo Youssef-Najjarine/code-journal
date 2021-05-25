@@ -43,10 +43,15 @@ function handleSaveButton(event) {
   data.nextEntryId++;
   entryFormForm1.reset();
   saveData();
+  const dataEntryId = event.target.getAttribute('data-entry-id');
+  data.entries.splice(data.entries.length - dataEntryId, 1);
+  ul.innerHTML = '';
+  populateEntries();
   entryFormImg.src = 'images/placeholder-image-square.jpg';
   dataViewEntries.classList.remove('hidden');
   entryForm.classList.add('hidden');
   deleteEntry.classList.remove('hidden');
+
 }
 
 function saveData() {
