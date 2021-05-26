@@ -9,6 +9,5 @@ var data = {
 
 const localData = localStorage.getItem('data');
 if (localData !== null) {
-
   data = JSON.parse(localData);
 }
